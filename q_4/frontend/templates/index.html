@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Notes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="banner">
+        <p class="bfont">Beautiful Books</p>
+    </div>
+    <a href="/add"><button class="btn">Add Books</button></a>
+
+   <div class="tasks-vertical">
+{% for x in books_h %}
+    <div class="task-row">
+        <span class="task-element light">{{ x.id }}</span>
+        <span class="task-element dark">{{ x.title }}</span>
+        <span class="task-element light">{{ x.author }}</span>
+        <span class="task-element dark">{{x.year}}</span>
+        <span class="task-element light">
+            <a href="/view/{{x.id}}">
+                <button class="btn">View</button>
+            </a>
+        </span>
+        <span class="task-element dark">
+            <a href="/update/{{x.id}}">
+                <button class="btn">Update</button>
+            </a>
+        </span>
+        <span class="task-element light">
+            <a href="/delete/{{x.id}}">
+                <button class="btn">Delete</button>
+            </a>
+        </span>
+    </div>
+{% endfor %}
+</body>

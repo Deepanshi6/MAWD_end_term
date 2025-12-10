@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Task</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <div class="banner">
+            <p class="bfont">Adding Task</p>
+        </div>
+        <form action="/update_book/{{book_u.id}}" method="post" class="formstyle"> <!--if we do method as get , then it shows the things put in form in query params,in post:it is directly given to body,so post is more safe -->
+            <input type="text" name="title" value="{{book_u.title}}" required><br>
+            <input type="text" name="author" placeholder="Author" value="{{book_u.author}}"><br>
+            <input type="text" name="year" placeholder="Year" value="{{book_u.year}}"><br>
+            <button type="submit" class="btn">Update Task</button>
+        </form>
+    </body>
+</html>
